@@ -1,19 +1,10 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
 
-    </tr>
-  </thead>
+<%= will_paginate %>
 
-  <tbody>
-    <% @user.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
+<ul class="users">
+  <%= render @users %>
+</ul>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= will_paginate %>
