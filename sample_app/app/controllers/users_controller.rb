@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    redirect_to root_url
+    @microposts = @user.microposts.paginate(page: params[:page])
+    #redirect_to root_url
   end
 
   def new
